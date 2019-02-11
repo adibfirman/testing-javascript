@@ -17,11 +17,10 @@
   },
   "lint-staged": {
     "linters": {
-      "\"src/*.+(js|jsx)\"": [
+      "src/*.{js}": [
         "prettier --write"
       ]
-    },
-    "relative": true
+    }
   },
   "author": "Adib Firman",
   "license": "ISC",
