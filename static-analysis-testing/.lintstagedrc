@@ -1,7 +1,7 @@
 {
   "linters": {
     "*.js": [
-      "eslint"
+      "npm run validate"
     ],
     "\"**/*.+(js|jsx)\"": [
       "prettier --write",
