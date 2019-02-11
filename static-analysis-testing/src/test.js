@@ -6,5 +6,6 @@ if (!('serviceWorker' in navigator)) {
 }
 
 const greeting = 'hello world'
-console.log(`the greeting is ${greeting}`)
-;[1, 2, 3].forEach(n => console.log(n))
+console
+  .log(`the greeting is ${greeting}`)
+  [(1, 2, 3)].forEach(n => console.log(n))
