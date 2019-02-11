@@ -18,7 +18,8 @@
   "lint-staged": {
     "\"**/*.+(js|jsx)\"": [
       "npm run format",
-      "npm run validate"
+      "npm run validate",
+      "git add"
     ]
   },
   "author": "Adib Firman",
