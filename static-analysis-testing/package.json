@@ -10,6 +10,11 @@
     "prettier": "prettier \"**/*.+(js|jsx)\"",
     "validate": "npm run lint && npm run prettier -- --list-different && npm run flow"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run validate"
+    }
+  },
   "keywords": ["js"],
   "author": "Adib Firman",
   "license": "ISC",
