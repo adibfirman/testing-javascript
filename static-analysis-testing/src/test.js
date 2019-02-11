@@ -3,8 +3,8 @@ typeof name === 'string'
 
 if (
   
-        !('serviceWorker' 
-                    in navigator)) {
+          !('serviceWorker' in 
+                              navigator)) {
   // you have an old browser
 }
 
