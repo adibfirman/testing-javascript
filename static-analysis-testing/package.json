@@ -12,15 +12,19 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run flow"
     }
   },
   "lint-staged": {
-    "\"**/*.+(js|jsx)\"": [
-      "npm run format",
-      "npm run validate",
-      "git add"
-    ]
+    "linters": {
+      "*.js": [
+        "eslint"
+      ],
+      "\"**/*.+(js|jsx)\"": [
+        "prettier --write",
+        "git add"
+      ]
+    }
   },
   "author": "Adib Firman",
   "license": "ISC",
