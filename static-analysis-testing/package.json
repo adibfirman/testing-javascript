@@ -15,17 +15,6 @@
       "pre-commit": "lint-staged && npm run flow"
     }
   },
-  "lint-staged": {
-    "linters": {
-      "*.js": [
-        "eslint"
-      ],
-      "\"**/*.+(js|jsx)\"": [
-        "prettier --write",
-        "git add"
-      ]
-    }
-  },
   "author": "Adib Firman",
   "license": "ISC",
   "devDependencies": {
