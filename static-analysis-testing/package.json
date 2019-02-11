@@ -5,16 +5,19 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src",
+    "flow": "flow",
     "format": "npm run prettier -- --write",
     "prettier": "prettier \"**/*.+(js|jsx)\"",
-    "validate": "npm run lint && npm run prettier -- --list-different"
+    "validate": "npm run lint && npm run prettier -- --list-different && npm run flow"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.13.0",
     "eslint-config-prettier": "^4.0.0",
+    "flow-bin": "^0.92.1",
     "prettier": "^1.16.4"
   }
 }
