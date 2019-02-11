@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src",
-    "format": "prettier --write \"**/*.+(js|jsx)\""
+    "format": "npm run prettier -- --write",
+    "prettier": "prettier \"**/*.+(js|jsx)\"",
+    "validate": "npm run lint && npm run prettier -- --list-different"
   },
   "keywords": [],
   "author": "",
