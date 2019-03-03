@@ -1,9 +1,8 @@
-import 'react-testing-library/cleanup-after-each'
 import {render} from 'react-testing-library'
 import React from 'react'
-import AutoScallingTest from '../auto-scaling-text'
+import AutoScallingText from '../auto-scaling-text'
 
 it('should render component', () => {
-  const {container} = render(<AutoScallingTest />)
+  const {container} = render(<AutoScallingText />)
   expect(container.innerHTML).toBeDefined()
 })

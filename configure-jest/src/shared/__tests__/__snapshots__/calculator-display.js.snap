@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should create a snapshot 1`] = `"<div class=\\"css-12149uf\\"><div class=\\"autoScalingText\\" style=\\"transform: scale(1,1);\\">0</div></div>"`;
