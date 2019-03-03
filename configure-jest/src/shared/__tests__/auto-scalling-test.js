@@ -4,5 +4,6 @@ import React from 'react'
 import AutoScallingTest from '../auto-scaling-text'
 
 it('should render component', () => {
-  render(<AutoScallingTest />)
+  const {container} = render(<AutoScallingTest />)
+  console.log(container.innerHTML)
 })
