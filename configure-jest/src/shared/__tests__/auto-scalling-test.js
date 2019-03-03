@@ -5,5 +5,5 @@ import AutoScallingTest from '../auto-scaling-text'
 
 it('should render component', () => {
   const {container} = render(<AutoScallingTest />)
-  console.log(container.innerHTML)
+  expect(container.innerHTML).toBeDefined()
 })
