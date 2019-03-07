@@ -1,5 +1,6 @@
 import 'jest-dom/extend-expect'
 import 'react-testing-library/cleanup-after-each'
+
 import React from 'react'
 import {render, fireEvent} from 'react-testing-library'
 import {FavoriteNumber} from '../favorite-number'
@@ -19,5 +20,14 @@ describe('Component <FavoriteNumber />', () => {
     const input = getByLabelText(/Favorite Number/i)
     fireEvent.change(input, {target: {value: 10}})
     expect(getByText(/the number is invalid/i)).toBeInTheDocument()
+  })
+
+  it('should not render an error message', () => {
+    const {getByLabelText, rerender, queryByText} = testComponent()
+    const input = getByLabelText(/Favorite Number/i)
+    fireEvent.change(input, {target: {value: 10}})
+
+    rerender(<FavoriteNumber max={10} />)
+    expect(queryByText(/the number is invalid/i)).toBeNull()
   })
 })

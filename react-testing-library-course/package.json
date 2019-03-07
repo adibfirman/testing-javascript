@@ -30,7 +30,6 @@
     "babel-core": "^7.0.0-bridge.0",
     "dom-testing-library": "^3.5.0",
     "jest": "^23.1.0",
-    "jest-axe": "^3.1.0",
     "jest-dom": "^3.1.2",
     "kcd-scripts": "^0.44.0",
     "test-data-bot": "^0.6.0"
