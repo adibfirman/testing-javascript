@@ -32,6 +32,7 @@ test('button submit will be disabled and api will be triggered', async () => {
     content: 'New Content',
     tags: ['tag1', 'tag2'],
   }
+
   getByLabelText(/title/i).value = fakePost.title
   getByLabelText(/content/i).value = fakePost.content
   getByLabelText(/tags/i).value = fakePost.tags.join(', ')
