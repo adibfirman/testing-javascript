@@ -1,12 +1,12 @@
 import 'jest-dom/extend-expect'
-
 import 'react-testing-library/cleanup-after-each'
 
 import React from 'react'
 import {render, fireEvent, wait} from 'react-testing-library'
 import {Redirect as MockRedirect} from 'react-router'
+import {build, fake, sequence} from 'test-data-bot'
 
-import {Editor} from '../../post-editor-05-dates'
+import {Editor} from '../../post-editor-06-generate-data'
 import {savePost as mockSavePost} from '../../api'
 
 jest.mock('../../api', () => {
@@ -25,14 +25,21 @@ afterEach(() => {
   mockSavePost.mockClear()
 })
 
+const blogBuilder = build('Blog').fields({
+  title: fake(f => f.lorem.words()),
+  content: fake(f => f.lorem.paragraph()),
+  tags: fake(f => [f.lorem.word(), f.lorem.word(), f.lorem.word()]),
+})
+
+const userBuilder = build('User').fields({
+  id: sequence(s => `user-${s}`),
+})
+
 test('button submit will be disabled and api will be triggered', async () => {
-  const fakeUser = {id: 'user-1'}
+  const fakeUser = userBuilder()
   const {getByLabelText, getByText} = render(<Editor user={fakeUser} />)
-  const fakePost = {
-    title: 'New Title',
-    content: 'New Content',
-    tags: ['tag1', 'tag2'],
-  }
+  const fakePost = blogBuilder()
+
   const preDate = Date.now()
 
   getByLabelText(/title/i).value = fakePost.title
